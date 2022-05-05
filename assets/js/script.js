@@ -23,15 +23,13 @@ course.students.forEach((student,index) => {
       
 });
 
-// const  list= document.querySelectorAll(`["list"]`);
-const newList = list.from(document.querySelectorAll(`[class*="a"]`));
-console.log(newList);
-
-// const list1 = document.querySelectorAll(`[list*="a"]`);
-
-
-
-// let ul=document.getElementById("list");
+const names=Array.from(document.querySelectorAll(".list-group-item"));
+const filteredNames=names.filter((n)=>
+n.textContent.toLowerCase().includes("a"));
+const ul=document.createElement("ul");
+filteredNames.forEach((element)=> {
+    ul.appendChild(element);
+});
 
 
 
